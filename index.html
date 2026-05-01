@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,initial-scale=1">
+        <title>Election DApp</title>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="hero">
+        <div class="hero-inner">
+            <div class="logo">🗳️</div>
+            <div>
+                <h1 class="title">Election DApp</h1>
+                <p class="subtitle">Simple, secure, and transparent voting — demo</p>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="left">
+            <div class="card">
+                <h2>Candidates</h2>
+                <ul id="candidatesList" class="list"></ul>
+            </div>
+
+            <div class="card results-card">
+                <div class="card-header">
+                    <h3>Results</h3>
+                    <button class="ghost" onclick="loadResults()">Refresh</button>
+                </div>
+                <ul id="resultsList" class="list results"></ul>
+            </div>
+        </section>
+
+        <aside class="right">
+            <div class="card">
+                <h3>Vote</h3>
+                <p class="muted">Enter the candidate ID to cast your vote.</p>
+                <div class="form">
+                    <input type="number" id="candidateId" placeholder="Candidate ID">
+                    <button id="voteBtn" onclick="vote()">Vote</button>
+                </div>
+                <div id="message" style="display:none;margin-top:12px;padding:8px;border-radius:6px;"></div>
+            </div>
+
+            <div class="card">
+                <h3>Add Candidate</h3>
+                <p class="muted">Add a new candidate (on-chain)</p>
+                <div class="form">
+                    <input type="text" id="candidateName" placeholder="Candidate name">
+                    <button id="addCandidateBtn" onclick="addCandidate()">Add</button>
+                </div>
+            </div>
+        </aside>
+    </main>
+
+    <footer class="footer">
+        <small>Demo DApp • Connect to local Ganache</small>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
